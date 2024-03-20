@@ -1,5 +1,6 @@
 package com.example.casestudylibrary.model;
 
+import com.example.casestudylibrary.model.dto.res.CategoryResDto;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -18,4 +19,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    public CategoryResDto toCategoryResDto() {
+        return new CategoryResDto(id, name);
+    }
 }
