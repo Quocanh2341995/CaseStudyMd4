@@ -24,8 +24,12 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private Long id_img;
+
+    @OneToOne
+    private Image image;
+    @Enumerated(EnumType.STRING)
     private ERole eRole;
     private LocalDate dob;
+    @Enumerated(EnumType.STRING)
     private EClass eClass;
 }

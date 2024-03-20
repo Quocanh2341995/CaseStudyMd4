@@ -1,5 +1,7 @@
 package com.example.casestudylibrary.model;
 
+import com.example.casestudylibrary.model.dto.req.BookReqDto;
+import com.example.casestudylibrary.model.dto.res.BookResDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,13 +20,19 @@ public class Book {
     private Long id;
     private String name;
     private String description;
-    private String photo;
+
+    @OneToOne
+    private Image image;
     private String status;
     private String publisher;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    public BookResDto toBookResDto() {
+        return new BookResDto(id, name, description, publisher, status, category);
+    }
 
 
 }
