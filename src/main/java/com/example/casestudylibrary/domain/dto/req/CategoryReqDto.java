@@ -1,5 +1,5 @@
-package com.example.casestudylibrary.model.dto.req;
 
+package com.example.casestudylibrary.domain.dto.req;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,5 +12,4 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategoryReqDto {
     private String name;
-
 }

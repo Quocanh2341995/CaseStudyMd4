@@ -1,13 +1,12 @@
 package com.example.casestudylibrary.service.impl;
 
-import com.example.casestudylibrary.model.Book;
-import com.example.casestudylibrary.model.Category;
-import com.example.casestudylibrary.model.dto.req.CategoryReqDto;
-import com.example.casestudylibrary.model.dto.res.BookResDto;
-import com.example.casestudylibrary.model.dto.res.CategoryResDto;
+import com.example.casestudylibrary.domain.Category;
+import com.example.casestudylibrary.domain.dto.req.CategoryReqDto;
+import com.example.casestudylibrary.domain.dto.res.CategoryResDto;
 import com.example.casestudylibrary.repository.ICategoryRepository;
-import com.example.casestudylibrary.service.IBookService;
+
 import com.example.casestudylibrary.service.ICategoryService;
+import com.example.casestudylibrary.service.book.IBookService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

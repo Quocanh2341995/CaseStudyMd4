@@ -1,8 +1,8 @@
 package com.example.casestudylibrary.service;
 
-import com.example.casestudylibrary.model.Category;
-import com.example.casestudylibrary.model.dto.req.CategoryReqDto;
-import com.example.casestudylibrary.model.dto.res.CategoryResDto;
+
+import com.example.casestudylibrary.domain.dto.req.CategoryReqDto;
+import com.example.casestudylibrary.domain.dto.res.CategoryResDto;
 
 import java.util.List;
 
