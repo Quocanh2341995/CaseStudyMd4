@@ -1,7 +1,7 @@
-package com.example.casestudylibrary.model;
+package com.example.casestudylibrary.domain;
 
-import com.example.casestudylibrary.model.enumperation.EClass;
-import com.example.casestudylibrary.model.enumperation.ERole;
+import com.example.casestudylibrary.domain.enumration.EClass;
+import com.example.casestudylibrary.domain.enumration.ERole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 @Getter
@@ -32,4 +34,6 @@ public class User {
     private LocalDate dob;
     @Enumerated(EnumType.STRING)
     private EClass eClass;
+    @OneToMany(mappedBy = "user" , fetch = FetchType.LAZY)
+    private List<Order> orders;
 }

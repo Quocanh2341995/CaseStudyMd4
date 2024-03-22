@@ -1,12 +1,12 @@
-package com.example.casestudylibrary.model;
+package com.example.casestudylibrary.domain;
 
-import com.example.casestudylibrary.model.dto.req.BookReqDto;
-import com.example.casestudylibrary.model.dto.res.BookResDto;
+import com.example.casestudylibrary.domain.dto.res.BookResDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "books")
@@ -26,13 +26,14 @@ public class Book {
     private String status;
     private String publisher;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @Where(clause = "deleted <> 'DELETED'")
     private Category category;
 
     public BookResDto toBookResDto() {
-        return new BookResDto(id, name, description, publisher, status, category);
+        return new BookResDto(id, name, description,image, publisher, status, category);
     }
+
 
 
 }
