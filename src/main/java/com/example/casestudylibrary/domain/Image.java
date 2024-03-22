@@ -1,4 +1,4 @@
-package com.example.casestudylibrary.model;
+package com.example.casestudylibrary.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

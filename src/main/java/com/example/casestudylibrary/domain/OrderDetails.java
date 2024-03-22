@@ -1,28 +1,25 @@
-package com.example.casestudylibrary.model;
+package com.example.casestudylibrary.domain;
 
-import com.example.casestudylibrary.model.enumperation.EStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
 @Entity
-@Table(name = "orders")
+@Table(name = "order_details")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Order {
+public class OrderDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate borrowDate;
-    private LocalDate payDate;
     @OneToOne
-    private User user;
+    private Order order;
     @OneToOne
     private Book book;
-    private EStatus eStatus;
+    private int quantity;
 }

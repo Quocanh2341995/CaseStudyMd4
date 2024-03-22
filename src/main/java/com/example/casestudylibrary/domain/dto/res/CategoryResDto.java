@@ -1,4 +1,4 @@
-package com.example.casestudylibrary.model.dto.req;
+package com.example.casestudylibrary.domain.dto.res;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,10 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookReqDto {
+public class CategoryResDto {
 
+    private Long id;
     private String name;
-    private String description;
-    private String publisher;
-    private String status;
 }
