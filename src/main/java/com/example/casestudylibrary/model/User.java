@@ -1,5 +1,7 @@
 package com.example.casestudylibrary.model;
 
+import com.example.casestudylibrary.model.dto.res.CategoryResDto;
+import com.example.casestudylibrary.model.dto.res.UserResDto;
 import com.example.casestudylibrary.model.enumperation.EClass;
 import com.example.casestudylibrary.model.enumperation.ERole;
 import jakarta.persistence.*;
@@ -32,4 +34,7 @@ public class User {
     private LocalDate dob;
     @Enumerated(EnumType.STRING)
     private EClass eClass;
+    public UserResDto toUserResDto() {
+        return new UserResDto(id, fullName, phone, username, password, email);
+    }
 }
