@@ -1,5 +1,6 @@
 package com.example.casestudylibrary.domain;
 
+import com.example.casestudylibrary.domain.dto.res.OrderResDto;
 import com.example.casestudylibrary.domain.enumration.EStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,4 +26,20 @@ public class Order {
     @OneToOne
     private Book book;
     private EStatus eStatus;
+
+
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable = false)
+    private User user;
+
+    public OrderResDto toOrderResDto() {
+        return new OrderResDto(
+                this.id,
+                this.borrowDate,
+                this.payDate,
+                null,
+                this.eStatus
+        );
+    }
 }
+

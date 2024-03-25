@@ -34,6 +34,6 @@ public class User {
     private LocalDate dob;
     @Enumerated(EnumType.STRING)
     private EClass eClass;
-    @OneToMany(mappedBy = "user" , fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user")
     private List<Order> orders;
 }

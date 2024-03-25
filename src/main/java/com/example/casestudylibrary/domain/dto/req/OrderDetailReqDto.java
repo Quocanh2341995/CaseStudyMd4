@@ -1,4 +1,4 @@
-package com.example.casestudylibrary.domain.dto.res;
+package com.example.casestudylibrary.domain.dto.req;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryResDto {
+public class OrderDetailReqDto {
 
-    private Long id;
-    private String name;
-
+    private Long bookId;
+    private Integer quantity;
 }

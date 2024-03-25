@@ -1,5 +1,6 @@
 package com.example.casestudylibrary.domain;
 
+import com.example.casestudylibrary.domain.dto.res.OrderDetailResDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,9 +18,18 @@ public class OrderDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
+
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order;
-    @OneToOne
+
+    @ManyToOne
+    @JoinColumn(name = "book_id")
     private Book book;
     private int quantity;
+
+    public OrderDetailResDto toOrderDetailResDto() {
+        return new OrderDetailResDto(this.book.getId(), this.quantity, this.order.getId());
+    }
 }
