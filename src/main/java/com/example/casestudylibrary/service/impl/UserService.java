@@ -1,11 +1,11 @@
 package com.example.casestudylibrary.service.impl;
 
 import com.example.casestudylibrary.config.UserPrinciple;
-import com.example.casestudylibrary.model.Category;
-import com.example.casestudylibrary.model.User;
-import com.example.casestudylibrary.model.dto.req.UserReqDto;
-import com.example.casestudylibrary.model.dto.res.CategoryResDto;
-import com.example.casestudylibrary.model.dto.res.UserResDto;
+import com.example.casestudylibrary.domain.Category;
+import com.example.casestudylibrary.domain.User;
+import com.example.casestudylibrary.domain.dto.req.UserReqDto;
+import com.example.casestudylibrary.domain.dto.res.CategoryResDto;
+import com.example.casestudylibrary.domain.dto.res.UserResDto;
 import com.example.casestudylibrary.repository.IUserRepository;
 import com.example.casestudylibrary.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;

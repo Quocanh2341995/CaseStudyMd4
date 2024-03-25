@@ -1,7 +1,7 @@
 package com.example.casestudylibrary.config;
 
-import com.example.casestudylibrary.model.Role;
-import com.example.casestudylibrary.model.User;
+import com.example.casestudylibrary.domain.Role;
+import com.example.casestudylibrary.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
