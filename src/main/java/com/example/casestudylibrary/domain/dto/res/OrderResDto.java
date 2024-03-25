@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,6 +18,6 @@ public class OrderResDto {
     private Long id;
     private LocalDate borrowDate;
     private LocalDate payDate;
-    private Long bookId;
+    private List<OrderDetailResDto> orderDetailResDtos;
     private EStatus eStatus;
 }

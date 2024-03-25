@@ -26,6 +26,8 @@ public class Order {
     @OneToOne
     private Book book;
     private EStatus eStatus;
+
+
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false)
     private User user;
@@ -35,7 +37,7 @@ public class Order {
                 this.id,
                 this.borrowDate,
                 this.payDate,
-                this.book.getId(),
+                null,
                 this.eStatus
         );
     }

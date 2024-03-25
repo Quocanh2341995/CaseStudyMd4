@@ -29,8 +29,8 @@ public class OrderController {
     }
     @PostMapping
     public ResponseEntity<?> save(@RequestBody OrderReqDto orderReqDto) {
-        orderService.save(orderReqDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        OrderResDto orderResDto  = orderService.save(orderReqDto);
+        return new ResponseEntity<>(orderResDto, HttpStatus.CREATED);
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {

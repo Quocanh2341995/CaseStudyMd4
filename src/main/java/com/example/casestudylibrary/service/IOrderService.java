@@ -11,7 +11,7 @@ import java.util.List;
 public interface IOrderService {
     List<OrderResDto> findAll();
     OrderResDto findOrdeById(Long id);
-    void save(OrderReqDto orderReqDto);
+    OrderResDto save(OrderReqDto orderReqDto);
     void delete(Long id);
     void updateStatusOrderById(Long id, StatusOrderReqDto statusOrderReqDto);
 }
