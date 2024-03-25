@@ -28,12 +28,12 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    public void save(CategoryReqDto categoryReqDto) {
+    public CategoryResDto save(CategoryReqDto categoryReqDto) {
        Category category = new Category();
        category.setName(categoryReqDto.getName());
        categoryRepository.save(category);
 
-
+        return category.toCategoryResDto();
 
     }
 

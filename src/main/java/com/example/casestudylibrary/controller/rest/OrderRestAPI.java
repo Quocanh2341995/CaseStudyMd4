@@ -1,4 +1,4 @@
-package com.example.casestudylibrary.controller;
+package com.example.casestudylibrary.controller.rest;
 
 
 import com.example.casestudylibrary.domain.dto.req.OrderReqDto;
@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @CrossOrigin("*")
 @RequestMapping("/api/orders")
-public class OrderController {
+public class OrderRestAPI {
     private final IOrderService orderService;
 
     @GetMapping

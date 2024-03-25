@@ -1,6 +1,6 @@
 package com.example.casestudylibrary.domain.enumration;
 
 public enum ERole {
-    ADMIN, LIBRARIAN, CUSTOMER
+    ROLE_ADMIN, ROLE_LIBRARIAN, ROLE_CUSTOMER
 
 }

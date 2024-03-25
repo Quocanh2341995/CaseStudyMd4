@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/products")
-public class ProductRestController {
+public class BookRestAPI {
     private final IBookService bookService;
 
-    public ProductRestController(IBookService bookService) {
+    public BookRestAPI(IBookService bookService) {
         this.bookService = bookService;
     }
     @GetMapping

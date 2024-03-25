@@ -1,4 +1,4 @@
-package com.example.casestudylibrary.controller;
+package com.example.casestudylibrary.controller.rest;
 
 import com.example.casestudylibrary.domain.dto.req.CategoryReqDto;
 import com.example.casestudylibrary.domain.dto.res.CategoryResDto;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/categories")
-public class CategoryController {
+public class CategoryRestAPI {
     @Autowired
     private ICategoryService categoryService;
     @GetMapping
