@@ -1,6 +1,6 @@
 package com.example.casestudylibrary.domain.dto.req;
 
-import com.example.casestudylibrary.domain.Image;
+import com.example.casestudylibrary.domain.File;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +16,5 @@ public class BookReqDto {
     private String description;
     private String publisher;
     private String status;
-    private Image image;
-    private Long categoryId;
+    private String categoryId;
 }

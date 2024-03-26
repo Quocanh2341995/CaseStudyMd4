@@ -29,7 +29,7 @@ public class User {
     private String email;
 
     @OneToOne
-    private Image image;
+    private File poster;
     @Enumerated(EnumType.STRING)
     private ERole eRole;
     private LocalDate dob;

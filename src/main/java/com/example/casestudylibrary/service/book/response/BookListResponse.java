@@ -5,7 +5,17 @@ public record BookListResponse(
     String name,
     String description,
     String image,
-    String status,
     String publisher,
-    String categoryName) {
+    String categoryName
+
+
+) {
+    public BookListResponse(Long id, String name, String description, String image, String publisher, String categoryName){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.image = image;
+        this.publisher = publisher;
+        this.categoryName = categoryName;
+    }
 }

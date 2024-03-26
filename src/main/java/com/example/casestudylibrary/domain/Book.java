@@ -22,7 +22,8 @@ public class Book {
     private String description;
 
     @OneToOne
-    private Image image;
+    private File poster;
+
     private String status;
     private String publisher;
 
@@ -31,9 +32,17 @@ public class Book {
     private Category category;
 
     public BookResDto toBookResDto() {
-        return new BookResDto(id, name, description,image, publisher, status, category);
+                    /*
+            private Long id;
+            private String name;
+            private String description;
+            private File poster;
+            private String publisher;
+            private String status;
+            private String categoryName;
+            private CategoryResDto category;
+             */
+        return new BookResDto(id, name, description,poster.toFileResDto(), publisher, status, category.toCategoryResDto());
     }
-
-
 
 }
