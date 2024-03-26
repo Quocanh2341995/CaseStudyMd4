@@ -9,7 +9,6 @@ import com.example.casestudylibrary.domain.dto.res.UserResDto;
 import com.example.casestudylibrary.repository.IUserRepository;
 import com.example.casestudylibrary.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.endpoint.SecurityContext;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

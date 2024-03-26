@@ -1,5 +1,6 @@
 package com.example.casestudylibrary.domain;
 
+import com.example.casestudylibrary.domain.dto.res.OrderDetailResDto;
 import com.example.casestudylibrary.domain.dto.res.OrderResDto;
 import com.example.casestudylibrary.domain.enumration.EStatus;
 import jakarta.persistence.*;
@@ -10,6 +11,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "orders")
@@ -32,13 +34,22 @@ public class Order {
     @JoinColumn(name="user_id", nullable = false)
     private User user;
 
+    @OneToMany(mappedBy = "order")
+    private List<OrderDetails> orderDetails;
+
     public OrderResDto toOrderResDto() {
+
+        List<OrderDetailResDto> orderDetailResDtos = this.orderDetails
+                .stream().map(odt -> {
+                    return new OrderDetailResDto(odt.getBook().getId(), odt.getBook().getName(), odt.getQuantity(), odt.getId());
+                }).collect(Collectors.toList());
         return new OrderResDto(
                 this.id,
                 this.borrowDate,
                 this.payDate,
-                null,
-                this.eStatus
+                orderDetailResDtos,
+                this.eStatus,
+                this.user.toUserResDto()
         );
     }
 }

@@ -13,6 +13,9 @@ import lombok.Setter;
 public class OrderDetailResDto {
 
     private Long bookId;
+    private String bookName;
     private Integer quantity;
     private Long orderDetailId;
+
+
 }

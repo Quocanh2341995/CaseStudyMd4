@@ -13,5 +13,5 @@ public interface IOrderService {
     OrderResDto findOrdeById(Long id);
     OrderResDto save(OrderReqDto orderReqDto);
     void delete(Long id);
-    void updateStatusOrderById(Long id, StatusOrderReqDto statusOrderReqDto);
+    void updateStatusOrderById(Long id);
 }

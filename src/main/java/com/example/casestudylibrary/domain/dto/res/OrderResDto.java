@@ -20,4 +20,6 @@ public class OrderResDto {
     private LocalDate payDate;
     private List<OrderDetailResDto> orderDetailResDtos;
     private EStatus eStatus;
+
+    private UserResDto userResDto;
 }

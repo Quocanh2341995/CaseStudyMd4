@@ -1,6 +1,7 @@
 package com.example.casestudylibrary.controller.rest;
 
 
+import com.example.casestudylibrary.domain.OrderDetails;
 import com.example.casestudylibrary.domain.dto.req.OrderReqDto;
 import com.example.casestudylibrary.domain.dto.req.StatusOrderReqDto;
 import com.example.casestudylibrary.domain.dto.res.OrderResDto;
@@ -38,8 +39,11 @@ public class OrderRestAPI {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
     @PatchMapping("/{id}/update-status")
-    public ResponseEntity<?> updateOrderById(@PathVariable Long id, @RequestBody StatusOrderReqDto statusOrderReqDto) {
-        orderService.updateStatusOrderById(id, statusOrderReqDto);
+    public ResponseEntity<?> updateOrderById(@PathVariable Long id) {
+        orderService.updateStatusOrderById(id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
+
+
 }
+

@@ -103,12 +103,16 @@ public class OrderService implements IOrderService {
     }
 
     @Override
-    public void updateStatusOrderById(Long id, StatusOrderReqDto statusOrderReqDto) {
+    public void updateStatusOrderById(Long id) {
         Order order = orderRepository.findById(id).orElse(null);
         if (order == null) {
             return;
         }
-        order.setEStatus(EStatus.valueOf(statusOrderReqDto.getStatus()));
+        if (order.getEStatus().equals(EStatus.AVAILABLE)) {
+            order.setEStatus(EStatus.UNAVAILABLE);
+        } else if (order.getEStatus().equals(EStatus.UNAVAILABLE)) {
+            order.setEStatus(EStatus.AVAILABLE);
+        }
         orderRepository.save(order);
     }
 
