@@ -39,8 +39,8 @@ public class OrderRestAPI {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
     @PatchMapping("/{id}/update-status")
-    public ResponseEntity<?> updateOrderById(@PathVariable Long id, @RequestBody StatusOrderReqDto statusOrderReqDto) {
-        orderService.updateStatusOrderById(id, statusOrderReqDto);
+    public ResponseEntity<?> updateOrderById(@PathVariable Long id) {
+        orderService.updateStatusOrderById(id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
