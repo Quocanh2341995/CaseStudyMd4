@@ -64,6 +64,7 @@ public class OrderService implements IOrderService {
 
         User user = userRepository.findById(orderReqDto.getUserId()).orElse(null);
         order.setUser(user);
+        order.setEStatus(EStatus.AVAILABLE);
 
         List<OrderDetails> orderDetails = new ArrayList<>();
         for(OrderDetailReqDto item : orderReqDto.getOrderDetails()){
