@@ -1,5 +1,6 @@
 package com.example.casestudylibrary.service.impl;
 
+import com.example.casestudylibrary.config.UserPrinciple;
 import com.example.casestudylibrary.domain.Category;
 import com.example.casestudylibrary.domain.User;
 import com.example.casestudylibrary.domain.dto.req.UserReqDto;
@@ -8,13 +9,16 @@ import com.example.casestudylibrary.domain.dto.res.UserResDto;
 import com.example.casestudylibrary.repository.IUserRepository;
 import com.example.casestudylibrary.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService implements IUserService {
+public class UserService implements IUserService, UserDetailsService {
     @Autowired
     private IUserRepository userRepository;
 
@@ -25,10 +29,10 @@ public class UserService implements IUserService {
                 .collect(Collectors.toList());
     }
 
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        return UserPrinciple.build(userRepository.findByUsername(username));
-//    }
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return UserPrinciple.build(userRepository.findByUsername(username));
+    }
     public User findByUsername(String name) {
         return userRepository.findByUsername(name);
     }
