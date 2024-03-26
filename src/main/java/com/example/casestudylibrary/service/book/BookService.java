@@ -2,6 +2,7 @@ package com.example.casestudylibrary.service.book;
 
 import com.example.casestudylibrary.domain.Book;
 import com.example.casestudylibrary.domain.Category;
+import com.example.casestudylibrary.domain.dto.res.BookResDto;
 import com.example.casestudylibrary.domain.enumration.EStatus;
 import com.example.casestudylibrary.repository.IBookRepository;
 import com.example.casestudylibrary.service.IExistsService;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BookService implements IBookService, IExistsService {
@@ -27,6 +29,12 @@ public class BookService implements IBookService, IExistsService {
         this.bookRepository = bookRepository;
         this.objectMapper = objectMapper;
     }
+
+    @Override
+    public List<BookResDto> findAll() {
+        return bookRepository.findAll().stream().map(book -> book.toBookResDto()).collect(Collectors.toList());
+    }
+
     @Override
     public Page<Book> findAllWithSearch(String search, Long categoryId, Pageable pageable) {
         search = "%" + search + "%";

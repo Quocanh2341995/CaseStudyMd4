@@ -1,6 +1,7 @@
-package com.example.casestudylibrary.controller;
+package com.example.casestudylibrary.controller.rest;
 
 
+import com.example.casestudylibrary.domain.OrderDetails;
 import com.example.casestudylibrary.domain.dto.req.OrderReqDto;
 import com.example.casestudylibrary.domain.dto.req.StatusOrderReqDto;
 import com.example.casestudylibrary.domain.dto.res.OrderResDto;
@@ -16,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @CrossOrigin("*")
 @RequestMapping("/api/orders")
-public class OrderController {
+public class OrderRestAPI {
     private final IOrderService orderService;
 
     @GetMapping
@@ -42,4 +43,7 @@ public class OrderController {
         orderService.updateStatusOrderById(id, statusOrderReqDto);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
+
+
 }
+

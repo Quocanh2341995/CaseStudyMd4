@@ -30,6 +30,6 @@ public class OrderDetails {
     private int quantity;
 
     public OrderDetailResDto toOrderDetailResDto() {
-        return new OrderDetailResDto(this.book.getId(), this.quantity, this.order.getId());
+        return new OrderDetailResDto(this.book.getId(),this.book.getName(), this.quantity, this.order.getId());
     }
 }

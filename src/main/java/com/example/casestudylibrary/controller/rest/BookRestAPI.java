@@ -16,15 +16,20 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/books")
-public class BookRestController {
+@CrossOrigin("*")
+public class BookRestAPI {
     private final IBookService bookService;
 
-    public BookRestController(IBookService bookService) {
+    public BookRestAPI(IBookService bookService) {
         this.bookService = bookService;
     }
     @GetMapping
     public ResponseEntity<Page<Book>> findAllWithSearch(@RequestParam(required = false, defaultValue = "") String search, @RequestParam(required = false) Long categoryId, @PageableDefault(sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
         return ResponseEntity.ok(bookService.findAllWithSearch(search, categoryId, pageable));
+    }
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllBooks() {
+        return ResponseEntity.ok(bookService.findAll());
     }
 
     @PostMapping

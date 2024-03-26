@@ -1,5 +1,6 @@
 package com.example.casestudylibrary.domain;
 
+import com.example.casestudylibrary.domain.dto.res.UserResDto;
 import com.example.casestudylibrary.domain.enumration.EClass;
 import com.example.casestudylibrary.domain.enumration.ERole;
 import jakarta.persistence.*;
@@ -34,6 +35,9 @@ public class User {
     private LocalDate dob;
     @Enumerated(EnumType.STRING)
     private EClass eClass;
+    public UserResDto toUserResDto() {
+        return new UserResDto(id, fullName, phone, username, password, email);
+    }
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 }

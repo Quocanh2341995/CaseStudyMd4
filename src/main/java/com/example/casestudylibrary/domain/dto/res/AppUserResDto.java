@@ -5,17 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDetailResDto {
+public class AppUserResDto {
+    private Long id;
 
-    private Long bookId;
-    private String bookName;
-    private Integer quantity;
-    private Long orderDetailId;
+    private String name;
 
-
+    private String password;
 }
